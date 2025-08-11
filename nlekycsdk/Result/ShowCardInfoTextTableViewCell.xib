@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ShowCardInfoTextTableViewCell" customModule="QTSIdentityApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Họ tên vợ/chồng 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXI-ur-i57">
+                        <rect key="frame" x="16" y="11.999999999999998" width="120" height="31.333333333333329"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="GL9-BR-LfG"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="XAu-pr-Yor"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.50980392156862742" green="0.52549019607843139" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Họ tên vợ/chồng" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVU-mL-OBf">
+                        <rect key="frame" x="146" y="12" width="158" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="bBy-5y-Rml"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbO-vx-vtR">
+                        <rect key="frame" x="16" y="54" width="288" height="1"/>
+                        <color key="backgroundColor" name="color-compdividersubtle"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="NvT-DK-W5R"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="VVU-mL-OBf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="FH8-Oz-uDw"/>
+                    <constraint firstItem="DbO-vx-vtR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Hjl-36-atO"/>
+                    <constraint firstAttribute="trailing" secondItem="VVU-mL-OBf" secondAttribute="trailing" constant="16" id="JZY-8P-SMH"/>
+                    <constraint firstAttribute="bottom" secondItem="DbO-vx-vtR" secondAttribute="bottom" id="aUX-qp-0SH"/>
+                    <constraint firstItem="EXI-ur-i57" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="h7n-EO-7k9"/>
+                    <constraint firstItem="VVU-mL-OBf" firstAttribute="leading" secondItem="EXI-ur-i57" secondAttribute="trailing" constant="10" id="mA1-5h-ASX"/>
+                    <constraint firstAttribute="trailing" secondItem="DbO-vx-vtR" secondAttribute="trailing" constant="16" id="nQu-C4-huG"/>
+                    <constraint firstAttribute="bottom" secondItem="VVU-mL-OBf" secondAttribute="bottom" constant="12" id="p8K-Pz-rce"/>
+                    <constraint firstItem="EXI-ur-i57" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="uY1-fp-1uI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bottomLine" destination="DbO-vx-vtR" id="1uq-di-Ucs"/>
+                <outlet property="contentLb" destination="VVU-mL-OBf" id="Uor-Ff-LDT"/>
+                <outlet property="nameLb" destination="EXI-ur-i57" id="NhO-AR-g7A"/>
+            </connections>
+            <point key="canvasLocation" x="220" y="21"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="color-compdividersubtle">
+            <color red="0.90588235294117647" green="0.90980392156862744" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
