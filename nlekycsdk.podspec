@@ -28,15 +28,12 @@ Pod::Spec.new do |spec|
   spec.libraries    = "c++"
   
   # Dependencies
-  spec.dependency 'FlashLiveness', :git => 'https://github.com/stevienguyen1988/FlashLivenessPod.git'
   spec.dependency 'QKMRZParser', '~> 2.0.0'
   spec.dependency 'SwiftyTesseract', '~> 3.1.3'
   spec.dependency 'iProov'
-  spec.dependency 'QTSCardReader'
   spec.dependency 'SVProgressHUD'
-  spec.dependency 'FontAwesome+iOS', :git => 'https://github.com/trungnguyen1791/ios-fontawesome.git', :commit => '0e6bf65'
+  spec.dependency 'FontAwesome.swift', '~> 1.9.1'
   spec.dependency 'Alamofire', '~> 5.0'
-  spec.dependency 'LivenessCloud'
   spec.dependency 'CryptoSwift', '~> 1.8'
   spec.dependency 'KeychainSwift', '~> 20.0'
   spec.dependency 'ObjectMapper', '~> 4.2'
