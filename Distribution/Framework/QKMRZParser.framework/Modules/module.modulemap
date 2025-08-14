@@ -1,0 +1,11 @@
+framework module QKMRZParser {
+  umbrella header "QKMRZParser-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module QKMRZParser.Swift {
+  header "QKMRZParser-Swift.h"
+  requires objc
+}

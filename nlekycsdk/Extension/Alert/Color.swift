@@ -39,15 +39,15 @@ public enum NewYorkDynamicColor {
 
     var uiColor: UIColor {
         switch self {
-        case .red:      return getDynamicColor(.red)
-        case .orange:   return getDynamicColor(.orange)
-        case .yellow:   return getDynamicColor(.yellow)
-        case .green:    return getDynamicColor(.green)
-        case .teal:     return getDynamicColor(.teal)
-        case .blue:     return getDynamicColor(.blue)
-        case .indigo:   return getDynamicColor(.indigo)
-        case .purple:   return getDynamicColor(.purple)
-        case .pink:     return getDynamicColor(.pink)
+        case .red: return getDynamicColor(.red)
+        case .orange: return getDynamicColor(.orange)
+        case .yellow: return getDynamicColor(.yellow)
+        case .green: return getDynamicColor(.green)
+        case .teal: return getDynamicColor(.teal)
+        case .blue: return getDynamicColor(.blue)
+        case .indigo: return getDynamicColor(.indigo)
+        case .purple: return getDynamicColor(.purple)
+        case .pink: return getDynamicColor(.pink)
         }
     }
 
@@ -56,8 +56,7 @@ public enum NewYorkDynamicColor {
             return UIColor { trait in
                 trait.userInterfaceStyle == .dark ? color.dark : color.light
             }
-        }
-        else {
+        } else {
             return color.light
         }
     }
@@ -79,42 +78,40 @@ private enum Color {
 
     var light: UIColor {
         switch self {
-        case .red:      return UIColor(hex: 0xe53935)
-        case .orange:   return UIColor(hex: 0xff5722)
-        case .yellow:   return UIColor(hex: 0xffc107)
-        case .green:    return UIColor(hex: 0x4caf50)
-        case .teal:     return UIColor(hex: 0x009688)
-        case .blue:     return UIColor(hex: 0x2196f3)
-        case .indigo:   return UIColor(hex: 0x3f51b5)
-        case .purple:   return UIColor(hex: 0x9c27b0)
-        case .pink:     return UIColor(hex: 0xe91e63)
+        case .red: return UIColor(hex: 0xe53935)
+        case .orange: return UIColor(hex: 0xff5722)
+        case .yellow: return UIColor(hex: 0xffc107)
+        case .green: return UIColor(hex: 0x4caf50)
+        case .teal: return UIColor(hex: 0x009688)
+        case .blue: return UIColor(hex: 0x2196f3)
+        case .indigo: return UIColor(hex: 0x3f51b5)
+        case .purple: return UIColor(hex: 0x9c27b0)
+        case .pink: return UIColor(hex: 0xe91e63)
         }
     }
 
     var dark: UIColor {
         switch self {
-        case .red:      return UIColor(hex: 0xf44336)
-        case .orange:   return UIColor(hex: 0xff8a65)
-        case .yellow:   return UIColor(hex: 0xffd54f)
-        case .green:    return UIColor(hex: 0x81c784)
-        case .teal:     return UIColor(hex: 0x4db6ac)
-        case .blue:     return UIColor(hex: 0x64b5f6)
-        case .indigo:   return UIColor(hex: 0x7986cb)
-        case .purple:   return UIColor(hex: 0xba68c8)
-        case .pink:     return UIColor(hex: 0xf06292)
+        case .red: return UIColor(hex: 0xf44336)
+        case .orange: return UIColor(hex: 0xff8a65)
+        case .yellow: return UIColor(hex: 0xffd54f)
+        case .green: return UIColor(hex: 0x81c784)
+        case .teal: return UIColor(hex: 0x4db6ac)
+        case .blue: return UIColor(hex: 0x64b5f6)
+        case .indigo: return UIColor(hex: 0x7986cb)
+        case .purple: return UIColor(hex: 0xba68c8)
+        case .pink: return UIColor(hex: 0xf06292)
         }
     }
 }
-
 
 extension NewYorkDynamicColor {
     enum Background {
         static let `default`: UIColor = {
             if #available(iOS 13.0, *) {
-//                return UIColor.secondarySystemBackground
+                //                return UIColor.secondarySystemBackground
                 return .white
-            }
-            else {
+            } else {
                 return .white
             }
         }()
@@ -122,8 +119,7 @@ extension NewYorkDynamicColor {
         static let sub: UIColor = {
             if #available(iOS 13.0, *) {
                 return UIColor.tertiarySystemBackground
-            }
-            else {
+            } else {
                 return .white
             }
         }()
@@ -133,8 +129,7 @@ extension NewYorkDynamicColor {
         static let separator: UIColor = {
             if #available(iOS 13.0, *) {
                 return UIColor.separator
-            }
-            else {
+            } else {
                 return UIColor(white: 0.9, alpha: 1)
             }
         }()
@@ -142,8 +137,7 @@ extension NewYorkDynamicColor {
         static let highlighted: UIColor = {
             if #available(iOS 13.0, *) {
                 return UIColor.systemGray5
-            }
-            else {
+            } else {
                 return UIColor(white: 0.9, alpha: 1)
             }
         }()
@@ -157,20 +151,20 @@ extension NewYorkDynamicColor {
 extension NewYorkDynamicColor {
     enum Text {
         static let title: UIColor = {
-            return .neutralColor900
+            return UIColor.black
         }()
 
         static let message: UIColor = {
-            return .neutralColor800
+            return UIColor.darkGray
         }()
     }
 }
 
 extension NewYorkDynamicColor {
     enum Button {
-        static let `default`:   UIColor = NewYorkDynamicColor.blue.uiColor
+        static let `default`: UIColor = NewYorkDynamicColor.blue.uiColor
         static let destructive: UIColor = NewYorkDynamicColor.red.uiColor
-        static let cancel:      UIColor = UIColor.systemGray
+        static let cancel: UIColor = UIColor.systemGray
     }
 }
 
@@ -181,5 +175,45 @@ extension UIColor {
         let blue = CGFloat((hex & 0x0000FF) >> 0) / 255
 
         self.init(red: red, green: green, blue: blue, alpha: alpha)
+    }
+
+}
+
+// MARK: - UIColor Extension for Framework Bundle
+extension UIColor {
+    static func frameworkColor(named name: String) -> UIColor? {
+        // Get the framework bundle using the same logic as other extensions
+        var frameworkBundle: Bundle?
+
+        // Attempt 1: Use Bundle(for: Class.self)
+        frameworkBundle = Bundle(for: NLeKYCSdk.self)
+
+        // If Bundle(for: Class.self) returns the main bundle, try to find the framework bundle manually
+        if frameworkBundle?.bundleIdentifier == Bundle.main.bundleIdentifier {
+            // Try to find the framework bundle in the app's Frameworks directory
+            if let frameworksPath = Bundle.main.path(forResource: "Frameworks", ofType: nil) {
+                let frameworkPath = frameworksPath + "/nlekycsdk.framework"
+                frameworkBundle = Bundle(path: frameworkPath)
+            }
+        }
+
+        // Fallback if frameworkBundle is still nil or incorrect
+        if frameworkBundle == nil || frameworkBundle?.bundleIdentifier != "com.nganluong.nlekycsdk"
+        {
+            // Last resort: iterate through all bundles to find the correct one
+            for bundle in Bundle.allFrameworks {
+                if bundle.bundleIdentifier == "com.nganluong.nlekycsdk" {
+                    frameworkBundle = bundle
+                    break
+                }
+            }
+        }
+
+        guard let bundle = frameworkBundle else {
+            debugPrint("⚠️ DEBUG: Could not find framework bundle for color loading.")
+            return nil
+        }
+
+        return UIColor(named: name, in: bundle, compatibleWith: nil)
     }
 }

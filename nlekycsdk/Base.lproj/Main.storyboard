@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uhb-ka-e4H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xiu-md-jqW">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -13,7 +13,7 @@
         <!--Ekyc Result View Controller-->
         <scene sceneID="cbC-Gh-Vqa">
             <objects>
-                <viewController storyboardIdentifier="EkycResultViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xj1-qu-ZiV" customClass="EkycResultViewController" customModule="ekycdemoapp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EkycResultViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xj1-qu-ZiV" customClass="EkycResultViewController" customModule="nlekycsdk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lnc-xQ-4VE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,12 +164,12 @@
         <!--ScanMRZ View Controller-->
         <scene sceneID="1Tc-cH-PJu">
             <objects>
-                <viewController storyboardIdentifier="ScanMRZViewController" id="Foa-PB-kg5" customClass="ScanMRZViewController" customModule="ekycdemoapp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScanMRZViewController" id="Foa-PB-kg5" customClass="ScanMRZViewController" customModule="nlekycsdk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W9x-Yy-Cha">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18g-yz-9Oq" customClass="QKMRZScannerView" customModule="EkycIprIOS" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18g-yz-9Oq" customClass="QKMRZScannerView" customModule="nlekycsdk" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="118" width="393" height="734"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -208,7 +208,7 @@
                                     <constraint firstAttribute="width" secondItem="cIT-8m-ty0" secondAttribute="height" multiplier="669:432" id="RVa-Es-iZl"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đưa mã MRZ ở mặt sau CCCD  gắn Chip vào khung hình" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpH-oq-2ub">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đưa mã MRZ ở mặt sau CCCD gắn Chip vào khung hình" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpH-oq-2ub">
                                 <rect key="frame" x="16" y="173" width="361" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -235,7 +235,7 @@
                                         <color key="textColor" name="color-aliason-surface-emphasis"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập 9 số cuối của CCCD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4BA-wJ-xVD" customClass="ERTextField" customModule="EkycIprIOS" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập 9 số cuối của CCCD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4BA-wJ-xVD" customClass="ERTextField" customModule="nlekycsdk" customModuleProvider="target">
                                         <rect key="frame" x="16" y="152" width="361" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="p2o-sC-bDL"/>
@@ -250,7 +250,7 @@
                                         <color key="textColor" name="color-aliason-surface-emphasis"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dd/MM/yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZt-wH-iDT" customClass="ERTextField" customModule="EkycIprIOS" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dd/MM/yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZt-wH-iDT" customClass="ERTextField" customModule="nlekycsdk" customModuleProvider="target">
                                         <rect key="frame" x="16" y="235" width="361" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="kcG-e6-tOo"/>
@@ -265,7 +265,7 @@
                                         <color key="textColor" name="color-aliason-surface-emphasis"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dd/MM/yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DRZ-mY-Pia" customClass="ERTextField" customModule="EkycIprIOS" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dd/MM/yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DRZ-mY-Pia" customClass="ERTextField" customModule="nlekycsdk" customModuleProvider="target">
                                         <rect key="frame" x="16" y="318" width="361" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="w0t-CJ-Q2s"/>
@@ -384,12 +384,12 @@
         <!--Ekyc Instruction View Controller-->
         <scene sceneID="uyo-ol-IvD">
             <objects>
-                <viewController storyboardIdentifier="EkycInstructionViewController" id="Xiu-md-jqW" customClass="EkycInstructionViewController" customModule="ekycdemoapp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EkycInstructionViewController" id="Xiu-md-jqW" customClass="EkycInstructionViewController" customModule="nlekycsdk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WPM-nr-X47">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUH-M9-k5h" customClass="Gradient" customModule="EkycIprIOS" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUH-M9-k5h">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -422,7 +422,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rGx-K2-G1k">
-                                <rect key="frame" x="16" y="177.99999999999997" width="361" height="499.33333333333326"/>
+                                <rect key="frame" x="16" y="134" width="361" height="543.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Xiu-md-jqW" id="CKN-yJ-wig"/>
@@ -464,7 +464,7 @@
         <!--Liveness View Controller-->
         <scene sceneID="J3o-4H-yWT">
             <objects>
-                <viewController storyboardIdentifier="LivenessViewController" id="ChT-rH-FUe" customClass="LivenessViewController" customModule="ekycdemoapp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LivenessViewController" id="ChT-rH-FUe" customClass="LivenessViewController" customModule="nlekycsdk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="coy-mT-0B6">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -566,12 +566,12 @@
         <!--ScanNFC View Controller-->
         <scene sceneID="0bZ-ei-526">
             <objects>
-                <viewController storyboardIdentifier="ScanNFCViewController" id="chJ-2E-QH9" customClass="ScanNFCViewController" customModule="ekycdemoapp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScanNFCViewController" id="chJ-2E-QH9" customClass="ScanNFCViewController" customModule="nlekycsdk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bkM-r5-klM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdD-On-aY6" customClass="Gradient" customModule="EkycIprIOS" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdD-On-aY6">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -649,28 +649,10 @@
             </objects>
             <point key="canvasLocation" x="3234.3511450381679" y="23.943661971830988"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ZID-3t-u9k">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uhb-ka-e4H" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xGd-dK-a7o">
-                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Xiu-md-jqW" kind="relationship" relationship="rootViewController" id="3bU-BH-khF"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wh7-SK-f35" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="127.48091603053435" y="18.30985915492958"/>
-        </scene>
         <!--Page View Controller-->
         <scene sceneID="SRJ-fC-80t">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="eoL-wc-8g4" customClass="PageViewController" customModule="ekycdemoapp" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="eoL-wc-8g4" customClass="PageViewController" customModule="nlekycsdk" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCq-ql-bYl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1610" y="689"/>
@@ -678,7 +660,7 @@
         <!--Liveness Instruction Item Controller-->
         <scene sceneID="6XQ-Wh-ckC">
             <objects>
-                <viewController storyboardIdentifier="LivenessInstructionItemController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zNj-bf-ani" customClass="LivenessInstructionItemController" customModule="ekycdemoapp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LivenessInstructionItemController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zNj-bf-ani" customClass="LivenessInstructionItemController" customModule="nlekycsdk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rqD-SL-SGB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -741,7 +723,7 @@
         <!--LivenessVC-->
         <scene sceneID="6KP-Ag-RVy">
             <objects>
-                <viewController storyboardIdentifier="LivenessVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="48g-JA-icF" customClass="LivenessVC" customModule="LivenessCloudSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LivenessVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="48g-JA-icF" customClass="LivenessVC" customModule="nlekycsdk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a0C-FI-yhE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -773,7 +755,7 @@
         <!--Liveness FlashVC-->
         <scene sceneID="RUN-2J-K7b">
             <objects>
-                <viewController storyboardIdentifier="LivenessFlashVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e4j-nD-hGX" customClass="LivenessFlashVC" customModule="LivenessCloudSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LivenessFlashVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e4j-nD-hGX" customClass="LivenessFlashVC" customModule="nlekycsdk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qab-C7-sJ8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

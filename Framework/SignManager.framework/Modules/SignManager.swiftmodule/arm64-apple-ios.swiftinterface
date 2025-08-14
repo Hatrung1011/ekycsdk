@@ -1,0 +1,49 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SignManager
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CommonCrypto
+import Compression
+import CryptoKit
+import Foundation
+import LocalAuthentication
+import Security
+@_exported import SignManager
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @objc public class SignManagement : ObjectiveC.NSObject {
+  @objc public static let shared: SignManager.SignManagement
+  @objc override dynamic public init()
+  @objc deinit
+}
+@available(iOS 13.0, *)
+extension SignManager.SignManagement {
+  @objc dynamic public func createJWSRequestBody(parameter: [Swift.String : Any], publicKey: Swift.String, privateKey: Swift.String) -> Foundation.Data?
+  @objc dynamic public func createJSONFromJWS(jws: Swift.String, privateKey: Swift.String, publicKey: Swift.String) -> Swift.String
+  @objc dynamic public func verifyJWSandConvertToJWE(seriString: Swift.String, publicKeyString: Swift.String) -> Swift.String
+  @objc dynamic public func convertJWEToJSONOBject(jwe: Swift.String, privateKeyString: Swift.String) -> Swift.String
+  @objc dynamic public func createJWE(data: Foundation.Data, publicKey: Swift.String) -> Swift.String?
+  @objc dynamic public func createJWS(data: Foundation.Data, key: Swift.String) -> Swift.String?
+  @objc dynamic public func createPublicKey(pem: Swift.String) -> Security.SecKey?
+  @objc dynamic public func createPrivateKey(pem: Swift.String) -> Security.SecKey?
+  @objc dynamic public func createSecKeyFromPrivateKey(privateKeyPEM: Swift.String) -> Security.SecKey?
+  @objc dynamic public func extractBase64EncodedData(fromPEM pemString: Swift.String) -> Swift.String?
+}
+@objc public enum SignMananagerError : Swift.Int, Swift.Error {
+  case badParameter
+  case joserError
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension SignManager.SignMananagerError : Swift.Equatable {}
+extension SignManager.SignMananagerError : Swift.Hashable {}
+extension SignManager.SignMananagerError : Swift.RawRepresentable {}

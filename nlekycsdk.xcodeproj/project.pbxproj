@@ -7,16 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		938CEA19F373740F8314A20F /* Pods_nlekycsdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D6501822C9348C6E6B7626 /* Pods_nlekycsdk.framework */; };
 		DDE9BF022E49986C0040C563 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = DDE9BF012E49986C0040C563 /* tessdata */; };
+		DDE9BF032E49986C0040C563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDE9BF042E49986C0040C563 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DDD3E4DB2E4B50E100BB238C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		44178CB711453E9F115F9EEB /* Pods-nlekycsdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nlekycsdk.release.xcconfig"; path = "Target Support Files/Pods-nlekycsdk/Pods-nlekycsdk.release.xcconfig"; sourceTree = "<group>"; };
-		8505B4A9264E8BFDB292A8B2 /* Pods-nlekycsdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nlekycsdk.debug.xcconfig"; path = "Target Support Files/Pods-nlekycsdk/Pods-nlekycsdk.debug.xcconfig"; sourceTree = "<group>"; };
-		89D6501822C9348C6E6B7626 /* Pods_nlekycsdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nlekycsdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDE9BEF52E49970A0040C563 /* nlekycsdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = nlekycsdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDD3E5942E4BB8BC00BB238C /* nlekycsdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = nlekycsdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE9BF012E49986C0040C563 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		DDE9BF042E49986C0040C563 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = nlekycsdk/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -24,12 +35,62 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				Assets.xcassets,
 			);
 			target = DDE9BEF42E49970A0040C563 /* nlekycsdk */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		DDD3E5972E4BB8BC00BB238C /* Exceptions for "Framework" folder in "Embed Frameworks" phase from "nlekycsdk" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			attributesByRelativePath = {
+				Alamofire.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				CryptoSwift.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				FlashLiveness.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				FontAwesome_iOS.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				IDCardReader.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				KeychainSwift.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				LivenessCloud.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				ObjectMapper.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				OpenSSL.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				QKMRZParser.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				SVProgressHUD.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				SignManager.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				SwiftyTesseract.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				iProov.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				libtesseract.framework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+			};
+			buildPhase = DDD3E4DB2E4B50E100BB238C /* Embed Frameworks */;
+			membershipExceptions = (
+				Alamofire.framework,
+				CryptoSwift.framework,
+				FlashLiveness.framework,
+				FontAwesome_iOS.framework,
+				IDCardReader.framework,
+				iProov.framework,
+				KeychainSwift.framework,
+				libtesseract.framework,
+				LivenessCloud.framework,
+				ObjectMapper.framework,
+				OpenSSL.framework,
+				QKMRZParser.framework,
+				SignManager.framework,
+				SVProgressHUD.framework,
+				SwiftyTesseract.framework,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		DDD3E5912E4BB8A100BB238C /* Framework */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DDD3E5972E4BB8BC00BB238C /* Exceptions for "Framework" folder in "Embed Frameworks" phase from "nlekycsdk" target */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
 		DDE9BEF72E49970A0040C563 /* nlekycsdk */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -45,47 +106,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				938CEA19F373740F8314A20F /* Pods_nlekycsdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4AF1024098394AC61232BCEE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				89D6501822C9348C6E6B7626 /* Pods_nlekycsdk.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AB6D72DCEE4F553C3B8849B9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8505B4A9264E8BFDB292A8B2 /* Pods-nlekycsdk.debug.xcconfig */,
-				44178CB711453E9F115F9EEB /* Pods-nlekycsdk.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		DDE9BEEB2E49970A0040C563 = {
 			isa = PBXGroup;
 			children = (
+				DDD3E5912E4BB8A100BB238C /* Framework */,
 				DDE9BF012E49986C0040C563 /* tessdata */,
 				DDE9BEF72E49970A0040C563 /* nlekycsdk */,
-				DDE9BEF62E49970A0040C563 /* Products */,
-				AB6D72DCEE4F553C3B8849B9 /* Pods */,
-				4AF1024098394AC61232BCEE /* Frameworks */,
+				DDD3E5942E4BB8BC00BB238C /* nlekycsdk.framework */,
 			);
-			sourceTree = "<group>";
-		};
-		DDE9BEF62E49970A0040C563 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DDE9BEF52E49970A0040C563 /* nlekycsdk.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,22 +139,23 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDE9BEFC2E49970A0040C563 /* Build configuration list for PBXNativeTarget "nlekycsdk" */;
 			buildPhases = (
-				E908618CA11D9EAC371E57A9 /* [CP] Check Pods Manifest.lock */,
 				DDE9BEF02E49970A0040C563 /* Headers */,
 				DDE9BEF12E49970A0040C563 /* Sources */,
 				DDE9BEF22E49970A0040C563 /* Frameworks */,
 				DDE9BEF32E49970A0040C563 /* Resources */,
+				DDD3E4DB2E4B50E100BB238C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				DDD3E5912E4BB8A100BB238C /* Framework */,
 				DDE9BEF72E49970A0040C563 /* nlekycsdk */,
 			);
 			name = nlekycsdk;
 			productName = nlekycsdk;
-			productReference = DDE9BEF52E49970A0040C563 /* nlekycsdk.framework */;
+			productReference = DDD3E5942E4BB8BC00BB238C /* nlekycsdk.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -147,8 +182,10 @@
 			);
 			mainGroup = DDE9BEEB2E49970A0040C563;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = DDE9BEF62E49970A0040C563 /* Products */;
+			productRefGroup = DDE9BEEB2E49970A0040C563;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -163,35 +200,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDE9BF022E49986C0040C563 /* tessdata in Resources */,
+				DDE9BF032E49986C0040C563 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		E908618CA11D9EAC371E57A9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-nlekycsdk-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DDE9BEF12E49970A0040C563 /* Sources */ = {
@@ -257,7 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -317,7 +330,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -331,18 +344,23 @@
 		};
 		DDE9BEFD2E49970A0040C563 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8505B4A9264E8BFDB292A8B2 /* Pods-nlekycsdk.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V9T4W9X5WH;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EAGER_LINKING = NO;
 				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Framework",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = nlekycsdk/Info.plist;
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Ứng dụng cần scan nfc để đọc thông tin từ thẻ căn cước công dân";
@@ -358,15 +376,19 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"@loader_path/SharedFrameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -no-verify-emitted-module-interface";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nganluong.nlekycsdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SKIP_INSTALL = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -376,23 +398,29 @@
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 x86_64";
 			};
 			name = Debug;
 		};
 		DDE9BEFE2E49970A0040C563 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44178CB711453E9F115F9EEB /* Pods-nlekycsdk.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V9T4W9X5WH;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EAGER_LINKING = NO;
 				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Framework",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = nlekycsdk/Info.plist;
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Ứng dụng cần scan nfc để đọc thông tin từ thẻ căn cước công dân";
@@ -408,15 +436,19 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"@loader_path/SharedFrameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -no-verify-emitted-module-interface";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nganluong.nlekycsdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SKIP_INSTALL = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -426,6 +458,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 x86_64";
 			};
 			name = Release;
 		};

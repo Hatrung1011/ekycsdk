@@ -80,7 +80,7 @@ class APIClient {
     
     // MARK: - Base Headers
     private func baseHeaders() -> HTTPHeaders {
-        var headers: HTTPHeaders = [
+        let headers: HTTPHeaders = [
             "Content-Type": "application/json",
             "Accept": "*/*"
         ]
@@ -235,7 +235,7 @@ class APIClient {
         }
         
         switch error {
-        case .responseValidationFailed(let reason):
+        case .responseValidationFailed(_):
             return .invalidResponse
         case .responseSerializationFailed:
             return .decodingError

@@ -1,0 +1,11 @@
+framework module SignManager {
+  umbrella header "SignManager.h"
+  export *
+
+  module * { export * }
+}
+
+module SignManager.Swift {
+  header "SignManager-Swift.h"
+  requires objc
+}

@@ -8,70 +8,66 @@
 import UIKit
 
 struct Constants {
-    
+
     static let isMasterApp = false
     static let kRealmSchemaVersion: UInt64 = 33
     // APPLICATION
     struct App {
-        
+
         // Main
         static let isDebugJSON = true
         static let isHTTPS = true
-        
+
         // Base
         static let BaseURL: String = {
             if Constants.App.isHTTPS {
                 return "https://"
-            }
-            else {
+            } else {
                 return "http://"
             }
         }()
-        
-        
+
         // Key
         struct Key {
             static let lbsPush: String = "NOTIFI_LBS"
             static let gpsPush: String = "NOTIFI_GPS"
-            
+
             struct FirebaseKey {
-                static let message:String = "MESSAGE"
-                static let pushAction:String = "PUSH_ACTION"
-                static let roleChanged:String = "ROLE_CHANGED"
-                static let resetSync:String = "RESET_SYNC_TIME"
+                static let message: String = "MESSAGE"
+                static let pushAction: String = "PUSH_ACTION"
+                static let roleChanged: String = "ROLE_CHANGED"
+                static let resetSync: String = "RESET_SYNC_TIME"
             }
-            
-            static let BaseAPIURL: String  = {
+
+            static let BaseAPIURL: String = {
                 let infoKeys = Bundle.main.infoDictionary
                 return infoKeys?["VNID_CONSENT_URL"] as! String
             }()
             static let BaseSocketURL = ""
-            static let googleAPIKey  = ""
+            static let googleAPIKey = ""
         }
     }
-    
+
     //
     // MARK: - Alert
     struct Alert {
         static func showErrorAlert(_ viewController: UIViewController, message: String?) {
             showAlert(viewController, title: "Lỗi", message: message)
         }
-        
-        static func showAlert(_ viewController: UIViewController, title: String?, message: String?, ok: String? = nil, cancel: String? = nil, cancelColor: UIColor = UIColor.neutralColor500, onCancel:(()-> Void)? = nil, onDone:(() -> Void)? = nil) {
+
+        static func showAlert(
+            _ viewController: UIViewController, title: String?, message: String?, ok: String? = nil,
+            cancel: String? = nil, cancelColor: UIColor = UIColor.systemGray,
+            onCancel: (() -> Void)? = nil, onDone: (() -> Void)? = nil
+        ) {
             let alert = NewYorkAlertController(title: title, message: message, style: .alert)
             alert.isTapDismissalEnabled = false
-            
+
             if let text = cancel {
                 let btn = NewYorkButton(title: text, style: .destructive) { _ in
                     onCancel?()
                 }
-//                btn.borderColor = cancelColor
-//                btn.borderWidth = 1
                 btn.setTitleColor(cancelColor, for: .normal)
-//                btn.setAttributedTitle(text.attributeString([
-//                    .foregroundColor: UIColor.supportsColorErrorLightColorError500,
-//                    .font: UIFont.systemFont(ofSize: 16)
-//                ]), for: .normal)
                 alert.addButton(btn)
             }
             if let text = ok {
@@ -90,20 +86,9 @@ struct Constants {
             viewController.present(alert, animated: true)
         }
     }
-    
+
     //MARK:- User
     struct UserConfig {
-        //actually it's not safe. If custumer require, we should switch to keychain
-//        static var password: String {
-//            get {
-//                let keychain = KeychainSwift()
-//                return keychain.get("kPASSWORD") ?? ""
-//            }
-//            set {
-//                let keychain = KeychainSwift()
-//                keychain.set(newValue, forKey: "kPASSWORD")
-//            }
-//        }
         static var appType: String {
             get {
                 return UserDefaults.standard.string(forKey: "kappType") ?? ""
@@ -113,7 +98,7 @@ struct Constants {
                 UserDefaults.standard.synchronize()
             }
         }
-        
+
         static var registeredUUID: String {
             get {
                 return UserDefaults.standard.string(forKey: "kregisteredUUID") ?? ""
@@ -123,7 +108,7 @@ struct Constants {
                 UserDefaults.standard.synchronize()
             }
         }
-        
+
         static var username: String {
             get {
                 return UserDefaults.standard.string(forKey: "kusername") ?? ""
@@ -133,7 +118,7 @@ struct Constants {
                 UserDefaults.standard.synchronize()
             }
         }
-        
+
         static var hasLaunchedBefore: Bool {
             get {
                 return UserDefaults.standard.bool(forKey: "khasLaunchedBefore")
@@ -143,7 +128,7 @@ struct Constants {
                 UserDefaults.standard.synchronize()
             }
         }
-        
+
         static var isNoDisplayLivenessInstruction: Bool {
             get {
                 return UserDefaults.standard.bool(forKey: "isNoDisplayInstruction")
@@ -185,21 +170,55 @@ struct Constants {
             }
         }
     }
-    
+
     struct Notifies {
-        static let selectedMenuHasChanged   = Notification.Name("selectedMenuHasChanged")
+        static let selectedMenuHasChanged = Notification.Name("selectedMenuHasChanged")
     }
-    
+
     struct AppConfig {
         static let term = "https://ndakey.vn/20250109_TaC_NDA_KEY.pdf"
-//        static let term = "https://cdn.eidas.vn/publicfiles/ĐK&ĐK_Quản_lý_danh_tính_số_trên_ứng_dụng_NDA.pdf".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        //        static let term = "https://cdn.eidas.vn/publicfiles/ĐK&ĐK_Quản_lý_danh_tính_số_trên_ứng_dụng_NDA.pdf".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         static let introductionVideo = "https://s3-sgn10.fptcloud.com/nda/ndakey/ndakey-intro.mp4"
     }
 }
 
-
 extension Thread {
     class func printCurrent() {
-        print("\r⚡️: \(Thread.current)" + "🏭: \(OperationQueue.current?.underlyingQueue?.label ?? "None")\r")
+        debugPrint(
+            "\r⚡️: \(Thread.current)"
+                + "🏭: \(OperationQueue.current?.underlyingQueue?.label ?? "None")\r")
+    }
+}
+
+// MARK: - UIImage Extension for Framework Bundle
+extension UIImage {
+    static func frameworkImage(named name: String) -> UIImage? {
+        // Get the framework bundle using the same logic as other extensions
+        var frameworkBundle: Bundle?
+
+        // Attempt 1: Use Bundle(for: Class.self)
+        frameworkBundle = Bundle(for: NLeKYCSdk.self)
+
+        // If Bundle(for: Class.self) returns the main bundle, try to find the framework bundle manually
+        if frameworkBundle?.bundleIdentifier == Bundle.main.bundleIdentifier {
+            // Try to find the framework bundle in the app's Frameworks directory
+            if let frameworksPath = Bundle.main.path(forResource: "Frameworks", ofType: nil) {
+                let frameworkPath = frameworksPath + "/nlekycsdk.framework"
+                frameworkBundle = Bundle(path: frameworkPath)
+            }
+
+            // If still not found, try alternative path
+            if frameworkBundle == nil {
+                let frameworkPath = Bundle.main.bundlePath + "/Frameworks/nlekycsdk.framework"
+                frameworkBundle = Bundle(path: frameworkPath)
+            }
+        }
+
+        // Fallback to main bundle if framework bundle is still nil
+        if frameworkBundle == nil {
+            frameworkBundle = Bundle.main
+        }
+
+        return UIImage(named: name, in: frameworkBundle, compatibleWith: nil)
     }
 }
