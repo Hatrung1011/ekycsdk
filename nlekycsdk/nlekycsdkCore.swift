@@ -24,6 +24,8 @@ public class NLeKYCSdkManager: UIViewController {
 
     static let shared = NLeKYCSdkManager()
 
+    private var isProd: Bool = false
+
     // Config values - sẽ được set sau khi API call thành công
     private var privateKey = ""
     private var publicKey = ""
@@ -34,7 +36,14 @@ public class NLeKYCSdkManager: UIViewController {
     public typealias EkycCallback = (String) -> Void
     private var ekycCallback: EkycCallback?
 
-    public func initSDK() {
+    // MARK: - Public Configuration Methods
+    /// Lấy baseURL dựa trên môi trường hiện tại
+    public func getBaseURL() -> String {
+        return isProd ? APIConfig.prodBaseURL : APIConfig.devBaseURL
+    }
+
+    public func initSDK(isProd: Bool) {
+        self.isProd = isProd
         setupIDCardReader()
     }
 

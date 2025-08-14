@@ -12,7 +12,9 @@ class APIService {
     static let shared = APIService()
     private let apiClient = APIClient.shared
     
-    private init() {}
+    private init() {
+        
+    }
     
     func getConfig(requestString: String) -> AnyPublisher<GetConfigResponse, APIError> {
         let request = BaseRequest(funcName: requestString)

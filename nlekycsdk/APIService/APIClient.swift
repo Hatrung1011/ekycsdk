@@ -5,13 +5,20 @@
 //  Created by Sherwin on 11/8/25.
 //
 
-import Foundation
 import Alamofire
 import Combine
+import Foundation
 
 // MARK: - API Configuration
 struct APIConfig {
-    static let baseURL = "https://sandbox.nganluong.vn/nl35/api"
+    static var baseURL: String {
+        return NLeKYCSdkManager.shared.getBaseURL()
+    }
+
+    // Default URLs cho từng môi trường
+    static let devBaseURL = "https://sandbox.nganluong.vn/nl35/api"
+    static let prodBaseURL = "https://api.nganluong.vn/nl35/api"
+
     static let timeout: TimeInterval = 30
     static let retryCount = 3
 }
@@ -27,7 +34,7 @@ enum APIError: Error, LocalizedError {
     case forbidden
     case notFound
     case validationError(String)
-    
+
     var errorDescription: String? {
         switch self {
         case .networkError(let error):
@@ -65,31 +72,31 @@ struct EmptyResponse: Codable {}
 // MARK: - API Client
 class APIClient {
     static let shared = APIClient()
-    
+
     private let session: Session
-    
+
     private init() {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = APIConfig.timeout
         configuration.timeoutIntervalForResource = APIConfig.timeout
-                
+
         self.session = Session(
             configuration: configuration,
         )
     }
-    
+
     // MARK: - Base Headers
     private func baseHeaders() -> HTTPHeaders {
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "Accept": "*/*"
+            "Accept": "*/*",
         ]
-        
+
         return headers
     }
-    
+
     // MARK: - HTTP Methods
-    
+
     /// GET Request
     func get<T: Codable>(
         endpoint: String,
@@ -103,7 +110,7 @@ class APIClient {
             responseType: responseType
         )
     }
-    
+
     /// POST Request
     func post<T: Codable>(
         endpoint: String,
@@ -117,7 +124,7 @@ class APIClient {
             responseType: responseType
         )
     }
-    
+
     /// PUT Request
     func put<T: Codable>(
         endpoint: String,
@@ -131,7 +138,7 @@ class APIClient {
             responseType: responseType
         )
     }
-    
+
     /// DELETE Request
     func delete<T: Codable>(
         endpoint: String,
@@ -145,7 +152,7 @@ class APIClient {
             responseType: responseType
         )
     }
-    
+
     /// Upload File
     func upload<T: Codable>(
         endpoint: String,
@@ -156,12 +163,13 @@ class APIClient {
         responseType: T.Type = T.self
     ) -> AnyPublisher<T, APIError> {
         let url = APIConfig.baseURL + endpoint
-        
+
         return Future<T, APIError> { promise in
             self.session.upload(
                 multipartFormData: { multipartFormData in
-                    multipartFormData.append(data, withName: "file", fileName: fileName, mimeType: mimeType)
-                    
+                    multipartFormData.append(
+                        data, withName: "file", fileName: fileName, mimeType: mimeType)
+
                     if let parameters = parameters {
                         for (key, value) in parameters {
                             if let data = "\(value)".data(using: .utf8) {
@@ -185,7 +193,7 @@ class APIClient {
         }
         .eraseToAnyPublisher()
     }
-    
+
     // MARK: - Private Methods
     private func request<T: Codable>(
         method: HTTPMethod,
@@ -194,7 +202,7 @@ class APIClient {
         responseType: T.Type = T.self
     ) -> AnyPublisher<T, APIError> {
         let url = APIConfig.baseURL + endpoint
-        
+
         return Future<T, APIError> { promise in
             self.session.request(
                 url,
@@ -215,7 +223,7 @@ class APIClient {
         }
         .eraseToAnyPublisher()
     }
-    
+
     private func handleError(_ error: AFError, response: HTTPURLResponse?) -> APIError {
         if let response = response {
             switch response.statusCode {
@@ -233,7 +241,7 @@ class APIClient {
                 return .networkError(error)
             }
         }
-        
+
         switch error {
         case .responseValidationFailed(_):
             return .invalidResponse
@@ -250,7 +258,7 @@ struct BaseRequest: Codable {
     let funcName: String?
     var qtsRequestLog: String?
     var checksum: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case funcName = "func"
         case qtsRequestLog = "qts_request_log"
@@ -262,7 +270,7 @@ struct GetConfigResponse: Codable {
     let errorCode: Int
     let errorMessage: String
     let data: ConfigData
-    
+
     enum CodingKeys: String, CodingKey {
         case errorCode = "error_code"
         case errorMessage = "error_message"
@@ -281,7 +289,7 @@ struct SaveLogResponse: Codable {
     let errorCode: Int
     let errorMessage: String?
     let data: EmptyData?
-    
+
     enum CodingKeys: String, CodingKey {
         case errorCode = "error_code"
         case errorMessage = "error_message"
